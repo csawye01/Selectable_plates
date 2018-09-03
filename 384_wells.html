@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <meta charset = "utf-8">
+    <title>Plate Map</title>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        $(".platemap").selectable();
+    </script>
+    <style>
+        .platemap-area {
+        position: absolute;
+        border: 2px solid #999999;
+        padding-top: 20px;
+        background: #a6a6a6;
+        width: 100%;
+        }
+        .platemap-container {
+        /*overflow-y: auto;*/
+        /*height: 500px;*/
+        }
+        .platemap {
+        border-spacing: 10;
+        width: 100%;
+        }
+        /* well contents & borders */
+        .platemap .item,
+        .header {
+        background: #F7F7F7;
+        color: #000;
+        padding: 3px;
+        font-size: x-small
+        }
+        /* position of platemap header text */
+        .platemap .header {
+        height: 0;
+        line-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        color: transparent;
+        border: none;
+        white-space: nowrap;
+        border-bottom: none;
+        border-left: 1px solid #ffffff;
+        font-size: smaller
+        }
+        /* position of platemap header text */
+        .platemap .header .header-name {
+        position: absolute;
+        background: transparent;
+        color: #000;
+        padding: 4px 1px;
+        top: 0;
+        margin-left: -32px;
+        line-height: normal;
+        /*border-right: 1px solid #393C44;*/
+        width: 80px;
+        }
+        /* JQuery UI Selectable */
+        .platemap .ui-selecting {
+        background: #da978b;
+        }
+        .platemap .ui-selected {
+        background: #c76351;
+        color: white;
+        }
+        .ui-selectable-helper {
+        position: absolute;
+        z-index: 100;
+        border: 1px dotted black;
+        }
+    </style>
+</head>
+<body>
+    <div class="platemap-area">
+        <div class="platemap-container">
+            <table class="platemap">
+                <thead>
+                <tr>
+                    <th class="header">
+                        <div class="header-name"></div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">01</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">02</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">03</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">04</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">05</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">06</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">07</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">08</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">09</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">10</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">11</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">12</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">13</div>
+                    <th class="header">
+                        <div class="header-name">14</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">15</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">16</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">17</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">18</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">19</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">20</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">21</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">22</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">23</div>
+                    </th>
+                    <th class="header">
+                        <div class="header-name">24</div>
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>A</th>
+                    <td class="item">A01</td>
+                    <td class="item">A02</td>
+                    <td class="item">A03</td>
+                    <td class="item">A04</td>
+                    <td class="item">A05</td>
+                    <td class="item">A06</td>
+                    <td class="item">A07</td>
+                    <td class="item">A08</td>
+                    <td class="item">A09</td>
+                    <td class="item">A10</td>
+                    <td class="item">A11</td>
+                    <td class="item">A12</td>
+                    <td class="item">A13</td>
+                    <td class="item">A14</td>
+                    <td class="item">A15</td>
+                    <td class="item">A16</td>
+                    <td class="item">A17</td>
+                    <td class="item">A18</td>
+                    <td class="item">A19</td>
+                    <td class="item">A20</td>
+                    <td class="item">A21</td>
+                    <td class="item">A22</td>
+                    <td class="item">A23</td>
+                    <td class="item">A24</td>
+                </tr>
+                <tr>
+                    <th>B</th>
+                    <td class="item">B01</td>
+                    <td class="item">B02</td>
+                    <td class="item">B03</td>
+                    <td class="item">B04</td>
+                    <td class="item">B05</td>
+                    <td class="item">B06</td>
+                    <td class="item">B07</td>
+                    <td class="item">B08</td>
+                    <td class="item">B09</td>
+                    <td class="item">B10</td>
+                    <td class="item">B11</td>
+                    <td class="item">B12</td>
+                    <td class="item">B13</td>
+                    <td class="item">B14</td>
+                    <td class="item">B15</td>
+                    <td class="item">B16</td>
+                    <td class="item">B17</td>
+                    <td class="item">B18</td>
+                    <td class="item">B19</td>
+                    <td class="item">B20</td>
+                    <td class="item">B21</td>
+                    <td class="item">B22</td>
+                    <td class="item">B23</td>
+                    <td class="item">B24</td>
+                </tr>
+                <tr>
+                    <th>C</th>
+                    <td class="item">C01</td>
+                    <td class="item">C02</td>
+                    <td class="item">C03</td>
+                    <td class="item">C04</td>
+                    <td class="item">C05</td>
+                    <td class="item">C06</td>
+                    <td class="item">C07</td>
+                    <td class="item">C08</td>
+                    <td class="item">C09</td>
+                    <td class="item">C10</td>
+                    <td class="item">C11</td>
+                    <td class="item">C12</td>
+                    <td class="item">C13</td>
+                    <td class="item">C14</td>
+                    <td class="item">C15</td>
+                    <td class="item">C16</td>
+                    <td class="item">C17</td>
+                    <td class="item">C18</td>
+                    <td class="item">C19</td>
+                    <td class="item">C20</td>
+                    <td class="item">C21</td>
+                    <td class="item">C22</td>
+                    <td class="item">C23</td>
+                    <td class="item">C24</td>
+                </tr>
+                <tr>
+                    <th>D</th>
+                    <td class="item">D01</td>
+                    <td class="item">D02</td>
+                    <td class="item">D03</td>
+                    <td class="item">D04</td>
+                    <td class="item">D05</td>
+                    <td class="item">D06</td>
+                    <td class="item">D07</td>
+                    <td class="item">D08</td>
+                    <td class="item">D09</td>
+                    <td class="item">D10</td>
+                    <td class="item">D11</td>
+                    <td class="item">D12</td>
+                    <td class="item">D13</td>
+                    <td class="item">D14</td>
+                    <td class="item">D15</td>
+                    <td class="item">D16</td>
+                    <td class="item">D17</td>
+                    <td class="item">D18</td>
+                    <td class="item">D19</td>
+                    <td class="item">D20</td>
+                    <td class="item">D21</td>
+                    <td class="item">D22</td>
+                    <td class="item">D23</td>
+                    <td class="item">D24</td>
+                </tr>
+                <tr>
+                    <th>E</th>
+                    <td class="item">E01</td>
+                    <td class="item">E02</td>
+                    <td class="item">E03</td>
+                    <td class="item">E04</td>
+                    <td class="item">E05</td>
+                    <td class="item">E06</td>
+                    <td class="item">E07</td>
+                    <td class="item">E08</td>
+                    <td class="item">E09</td>
+                    <td class="item">E10</td>
+                    <td class="item">E11</td>
+                    <td class="item">E12</td>
+                    <td class="item">E13</td>
+                    <td class="item">E14</td>
+                    <td class="item">E15</td>
+                    <td class="item">E16</td>
+                    <td class="item">E17</td>
+                    <td class="item">E18</td>
+                    <td class="item">E19</td>
+                    <td class="item">E20</td>
+                    <td class="item">E21</td>
+                    <td class="item">E22</td>
+                    <td class="item">E23</td>
+                    <td class="item">E24</td>
+                </tr>
+                <tr>
+                    <th>F</th>
+                    <td class="item">F01</td>
+                    <td class="item">F02</td>
+                    <td class="item">F03</td>
+                    <td class="item">F04</td>
+                    <td class="item">F05</td>
+                    <td class="item">F06</td>
+                    <td class="item">F07</td>
+                    <td class="item">F08</td>
+                    <td class="item">F09</td>
+                    <td class="item">F10</td>
+                    <td class="item">F11</td>
+                    <td class="item">F12</td>
+                    <td class="item">F13</td>
+                    <td class="item">F14</td>
+                    <td class="item">F15</td>
+                    <td class="item">F16</td>
+                    <td class="item">F17</td>
+                    <td class="item">F18</td>
+                    <td class="item">F19</td>
+                    <td class="item">F20</td>
+                    <td class="item">F21</td>
+                    <td class="item">F22</td>
+                    <td class="item">F23</td>
+                    <td class="item">F24</td>
+                </tr>
+                <tr>
+                    <th>G</th>
+                    <td class="item">G01</td>
+                    <td class="item">G02</td>
+                    <td class="item">G03</td>
+                    <td class="item">G04</td>
+                    <td class="item">G05</td>
+                    <td class="item">G06</td>
+                    <td class="item">G07</td>
+                    <td class="item">G08</td>
+                    <td class="item">G09</td>
+                    <td class="item">G10</td>
+                    <td class="item">G11</td>
+                    <td class="item">G12</td>
+                    <td class="item">G13</td>
+                    <td class="item">G14</td>
+                    <td class="item">G15</td>
+                    <td class="item">G16</td>
+                    <td class="item">G17</td>
+                    <td class="item">G18</td>
+                    <td class="item">G19</td>
+                    <td class="item">G20</td>
+                    <td class="item">G21</td>
+                    <td class="item">G22</td>
+                    <td class="item">G23</td>
+                    <td class="item">G24</td>
+                </tr>
+                <tr>
+                    <th>H</th>
+                    <td class="item">H01</td>
+                    <td class="item">H02</td>
+                    <td class="item">H03</td>
+                    <td class="item">H04</td>
+                    <td class="item">H05</td>
+                    <td class="item">H06</td>
+                    <td class="item">H07</td>
+                    <td class="item">H08</td>
+                    <td class="item">H09</td>
+                    <td class="item">H10</td>
+                    <td class="item">H11</td>
+                    <td class="item">H12</td>
+                    <td class="item">H13</td>
+                    <td class="item">H14</td>
+                    <td class="item">H15</td>
+                    <td class="item">H16</td>
+                    <td class="item">H17</td>
+                    <td class="item">H18</td>
+                    <td class="item">H19</td>
+                    <td class="item">H20</td>
+                    <td class="item">H21</td>
+                    <td class="item">H22</td>
+                    <td class="item">H23</td>
+                    <td class="item">H24</td>
+                </tr>
+                <tr>
+                    <th>I</th>
+                    <td class="item">I01</td>
+                    <td class="item">I02</td>
+                    <td class="item">I03</td>
+                    <td class="item">I04</td>
+                    <td class="item">I05</td>
+                    <td class="item">I06</td>
+                    <td class="item">I07</td>
+                    <td class="item">I08</td>
+                    <td class="item">I09</td>
+                    <td class="item">I10</td>
+                    <td class="item">I11</td>
+                    <td class="item">I12</td>
+                    <td class="item">I13</td>
+                    <td class="item">I14</td>
+                    <td class="item">I15</td>
+                    <td class="item">I16</td>
+                    <td class="item">I17</td>
+                    <td class="item">I18</td>
+                    <td class="item">I19</td>
+                    <td class="item">I20</td>
+                    <td class="item">I21</td>
+                    <td class="item">I22</td>
+                    <td class="item">I23</td>
+                    <td class="item">I24</td>
+                </tr>
+                <tr>
+                    <th>J</th>
+                    <td class="item">J01</td>
+                    <td class="item">J02</td>
+                    <td class="item">J03</td>
+                    <td class="item">J04</td>
+                    <td class="item">J05</td>
+                    <td class="item">J06</td>
+                    <td class="item">J07</td>
+                    <td class="item">J08</td>
+                    <td class="item">J09</td>
+                    <td class="item">J10</td>
+                    <td class="item">J11</td>
+                    <td class="item">J12</td>
+                    <td class="item">J13</td>
+                    <td class="item">J14</td>
+                    <td class="item">J15</td>
+                    <td class="item">J16</td>
+                    <td class="item">J17</td>
+                    <td class="item">J18</td>
+                    <td class="item">J19</td>
+                    <td class="item">J20</td>
+                    <td class="item">J21</td>
+                    <td class="item">J22</td>
+                    <td class="item">J23</td>
+                    <td class="item">J24</td>
+                </tr>
+                <tr>
+                    <th>K</th>
+                    <td class="item">K01</td>
+                    <td class="item">K02</td>
+                    <td class="item">K03</td>
+                    <td class="item">K04</td>
+                    <td class="item">K05</td>
+                    <td class="item">K06</td>
+                    <td class="item">K07</td>
+                    <td class="item">K08</td>
+                    <td class="item">K09</td>
+                    <td class="item">K10</td>
+                    <td class="item">K11</td>
+                    <td class="item">K12</td>
+                    <td class="item">K13</td>
+                    <td class="item">K14</td>
+                    <td class="item">K15</td>
+                    <td class="item">K16</td>
+                    <td class="item">K17</td>
+                    <td class="item">K18</td>
+                    <td class="item">K19</td>
+                    <td class="item">K20</td>
+                    <td class="item">K21</td>
+                    <td class="item">K22</td>
+                    <td class="item">K23</td>
+                    <td class="item">K24</td>
+                </tr>
+                <tr>
+                    <th>L</th>
+                    <td class="item">L01</td>
+                    <td class="item">L02</td>
+                    <td class="item">L03</td>
+                    <td class="item">L04</td>
+                    <td class="item">L05</td>
+                    <td class="item">L06</td>
+                    <td class="item">L07</td>
+                    <td class="item">L08</td>
+                    <td class="item">L09</td>
+                    <td class="item">L10</td>
+                    <td class="item">L11</td>
+                    <td class="item">L12</td>
+                    <td class="item">L13</td>
+                    <td class="item">L14</td>
+                    <td class="item">L15</td>
+                    <td class="item">L16</td>
+                    <td class="item">L17</td>
+                    <td class="item">L18</td>
+                    <td class="item">L19</td>
+                    <td class="item">L20</td>
+                    <td class="item">L21</td>
+                    <td class="item">L22</td>
+                    <td class="item">L23</td>
+                    <td class="item">L24</td>
+                </tr>
+                <tr>
+                    <th>M</th>
+                    <td class="item">M01</td>
+                    <td class="item">M02</td>
+                    <td class="item">M03</td>
+                    <td class="item">M04</td>
+                    <td class="item">M05</td>
+                    <td class="item">M06</td>
+                    <td class="item">M07</td>
+                    <td class="item">M08</td>
+                    <td class="item">M09</td>
+                    <td class="item">M10</td>
+                    <td class="item">M11</td>
+                    <td class="item">M12</td>
+                    <td class="item">M13</td>
+                    <td class="item">M14</td>
+                    <td class="item">M15</td>
+                    <td class="item">M16</td>
+                    <td class="item">M17</td>
+                    <td class="item">M18</td>
+                    <td class="item">M19</td>
+                    <td class="item">M20</td>
+                    <td class="item">M21</td>
+                    <td class="item">M22</td>
+                    <td class="item">M23</td>
+                    <td class="item">M24</td>
+                </tr>
+                <tr>
+                    <th>N</th>
+                    <td class="item">N01</td>
+                    <td class="item">N02</td>
+                    <td class="item">N03</td>
+                    <td class="item">N04</td>
+                    <td class="item">N05</td>
+                    <td class="item">N06</td>
+                    <td class="item">N07</td>
+                    <td class="item">N08</td>
+                    <td class="item">N09</td>
+                    <td class="item">N10</td>
+                    <td class="item">N11</td>
+                    <td class="item">N12</td>
+                    <td class="item">N13</td>
+                    <td class="item">N14</td>
+                    <td class="item">N15</td>
+                    <td class="item">N16</td>
+                    <td class="item">N17</td>
+                    <td class="item">N18</td>
+                    <td class="item">N19</td>
+                    <td class="item">N20</td>
+                    <td class="item">N21</td>
+                    <td class="item">N22</td>
+                    <td class="item">N23</td>
+                    <td class="item">N24</td>
+                </tr>
+                <tr>
+                    <th>O</th>
+                    <td class="item">O01</td>
+                    <td class="item">O02</td>
+                    <td class="item">O03</td>
+                    <td class="item">O04</td>
+                    <td class="item">O05</td>
+                    <td class="item">O06</td>
+                    <td class="item">O07</td>
+                    <td class="item">O08</td>
+                    <td class="item">O09</td>
+                    <td class="item">O10</td>
+                    <td class="item">O11</td>
+                    <td class="item">O12</td>
+                    <td class="item">O13</td>
+                    <td class="item">O14</td>
+                    <td class="item">O15</td>
+                    <td class="item">O16</td>
+                    <td class="item">O17</td>
+                    <td class="item">O18</td>
+                    <td class="item">O19</td>
+                    <td class="item">O20</td>
+                    <td class="item">O21</td>
+                    <td class="item">O22</td>
+                    <td class="item">O23</td>
+                    <td class="item">O24</td>
+                </tr>
+                <tr>
+                    <th>P</th>
+                    <td class="item">P01</td>
+                    <td class="item">P02</td>
+                    <td class="item">P03</td>
+                    <td class="item">P04</td>
+                    <td class="item">P05</td>
+                    <td class="item">P06</td>
+                    <td class="item">P07</td>
+                    <td class="item">P08</td>
+                    <td class="item">P09</td>
+                    <td class="item">P10</td>
+                    <td class="item">P11</td>
+                    <td class="item">P12</td>
+                    <td class="item">P13</td>
+                    <td class="item">P14</td>
+                    <td class="item">P15</td>
+                    <td class="item">P16</td>
+                    <td class="item">P17</td>
+                    <td class="item">P18</td>
+                    <td class="item">P19</td>
+                    <td class="item">P20</td>
+                    <td class="item">P21</td>
+                    <td class="item">P22</td>
+                    <td class="item">P23</td>
+                    <td class="item">P24</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

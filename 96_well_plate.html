@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <meta charset = "utf-8">
+    <title>Plate Map</title>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script>
+        $(".platemap").selectable();
+    </script>
+    <style>
+        .platemap-area {
+            position: absolute;
+            border: 2px solid #999999;
+            padding-top: 20px;
+            background: #a6a6a6;
+            width: 100%;
+        }
+        .platemap-container {
+            /*overflow-y: auto;*/
+            /*height: 500px;*/
+        }
+        .platemap {
+            border-spacing: 10;
+            width: 100%;
+        }
+        /* well contents & borders */
+        .platemap .item,
+        .header {
+            background: #F7F7F7;
+            color: #000;
+            padding: 3px;
+            font-size: small
+        }
+        /* position of platemap header text */
+        .platemap .header {
+            height: 0;
+            line-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            color: transparent;
+            border: none;
+            white-space: nowrap;
+            border-bottom: none;
+            border-left: 1px solid #ffffff;
+            font-size: small
+        }
+        /* position of platemap header text */
+        .platemap .header .header-name {
+            position: absolute;
+            background: transparent;
+            color: #000;
+            padding: 4px 1px;
+            top: 0;
+            margin-left: -32px;
+            line-height: normal;
+            /*border-right: 1px solid #393C44;*/
+            width: 80px;
+        }
+        /* JQuery UI Selectable */
+        .platemap .ui-selecting {
+            background: #da978b;
+        }
+        .platemap .ui-selected {
+            background: #c76351;
+            color: white;
+        }
+        .ui-selectable-helper {
+            position: absolute;
+            z-index: 100;
+            border: 1px dotted black;
+        }
+    </style>
+</head>
+<body>
+<div class="platemap-area">
+    <div class="platemap-container">
+        <table class="platemap" >
+            <thead>
+            <tr>
+                <th class="header">
+                    <div class="header-name"></div>
+                </th>
+                <th class="header">
+                    <div class="header-name">1</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">2</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">3</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">4</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">5</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">6</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">7</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">8</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">9</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">10</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">11</div>
+                </th>
+                <th class="header">
+                    <div class="header-name">12</div>
+                </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>A</th>
+                <td class="item">A01</td>
+                <td class="item">A02</td>
+                <td class="item">A03</td>
+                <td class="item">A04</td>
+                <td class="item">A05</td>
+                <td class="item">A06</td>
+                <td class="item">A07</td>
+                <td class="item">A08</td>
+                <td class="item">A09</td>
+                <td class="item">A10</td>
+                <td class="item">A11</td>
+                <td class="item">A12</td>
+            </tr>
+            <tr>
+                <th>B</th>
+                <td class="item">B01</td>
+                <td class="item">B02</td>
+                <td class="item">B03</td>
+                <td class="item">B04</td>
+                <td class="item">B05</td>
+                <td class="item">B06</td>
+                <td class="item">B07</td>
+                <td class="item">B08</td>
+                <td class="item">B09</td>
+                <td class="item">B10</td>
+                <td class="item">B11</td>
+                <td class="item">B12</td>
+            </tr>
+            <tr>
+                <th>C</th>
+                <td class="item">C01</td>
+                <td class="item">C02</td>
+                <td class="item">C03</td>
+                <td class="item">C04</td>
+                <td class="item">C05</td>
+                <td class="item">C06</td>
+                <td class="item">C07</td>
+                <td class="item">C08</td>
+                <td class="item">C09</td>
+                <td class="item">C10</td>
+                <td class="item">C11</td>
+                <td class="item">C12</td>
+            </tr>
+            <tr>
+                <th>D</th>
+                <td class="item">D01</td>
+                <td class="item">D02</td>
+                <td class="item">D03</td>
+                <td class="item">D04</td>
+                <td class="item">D05</td>
+                <td class="item">D06</td>
+                <td class="item">D07</td>
+                <td class="item">D08</td>
+                <td class="item">D09</td>
+                <td class="item">D10</td>
+                <td class="item">D11</td>
+                <td class="item">D12</td>
+            </tr>
+            <tr>
+                <th>E</th>
+                <td class="item">E01</td>
+                <td class="item">E02</td>
+                <td class="item">E03</td>
+                <td class="item">E04</td>
+                <td class="item">E05</td>
+                <td class="item">E06</td>
+                <td class="item">E07</td>
+                <td class="item">E08</td>
+                <td class="item">E09</td>
+                <td class="item">E10</td>
+                <td class="item">E11</td>
+                <td class="item">E12</td>
+            </tr>
+            <tr>
+                <th>F</th>
+                <td class="item">F01</td>
+                <td class="item">F02</td>
+                <td class="item">F03</td>
+                <td class="item">F04</td>
+                <td class="item">F05</td>
+                <td class="item">F06</td>
+                <td class="item">F07</td>
+                <td class="item">F08</td>
+                <td class="item">F09</td>
+                <td class="item">F10</td>
+                <td class="item">F11</td>
+                <td class="item">F12</td>
+            </tr>
+            <tr>
+                <th>G</th>
+                <td class="item">G01</td>
+                <td class="item">G02</td>
+                <td class="item">G03</td>
+                <td class="item">G04</td>
+                <td class="item">G05</td>
+                <td class="item">G06</td>
+                <td class="item">G07</td>
+                <td class="item">G08</td>
+                <td class="item">G09</td>
+                <td class="item">G10</td>
+                <td class="item">G11</td>
+                <td class="item">G12</td>
+            </tr>
+            <tr>
+                <th>H</th>
+                <td class="item">H01</td>
+                <td class="item">H02</td>
+                <td class="item">H03</td>
+                <td class="item">H04</td>
+                <td class="item">H05</td>
+                <td class="item">H06</td>
+                <td class="item">H07</td>
+                <td class="item">H08</td>
+                <td class="item">H09</td>
+                <td class="item">H10</td>
+                <td class="item">H11</td>
+                <td class="item">H12</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
